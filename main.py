@@ -7,7 +7,7 @@ dice_upper_limit = 6
 number_of_dice = 10000000
 
 # simulating the dice rolls
-rolls = np.random.randint(dice_lower_limit, dice_upper_limit+1, (number_of_dice))
+rolls = np.random.randint(dice_lower_limit, dice_upper_limit+1, (number_of_dice), dtype=np.int8)
 
 # calculating the average
 average = np.mean(rolls)
@@ -23,7 +23,6 @@ print(f"Probability of Each Number: {prop}")
 
 plt.hist(rolls, bins=np.arange(dice_lower_limit, dice_upper_limit+2)-0.5, edgecolor='black')
 plt.xticks(range(dice_lower_limit, dice_upper_limit+1))
-# gpt above 2 lines
 plt.title('Frequency Distribution (Histogram)')
 plt.xlabel('Value')
 plt.ylabel('Frequency')
